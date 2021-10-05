@@ -1,0 +1,26 @@
+[
+    {
+        "name": "list",
+        "method": "get",
+        "url": "{{endpoint}}/users",
+        "headers": {
+            "X-Requested-With": "XMLHttpRequest"
+        }
+    },
+    {
+        "name": "create",
+        "method": "post"
+        "url": "{{endpoint}}/users",
+        "use_global_headers": false,
+        "headers": {
+            "Content-Type": "application/x-www-form-urlencoded",
+        },
+        "data": {
+            "name": "semih",
+            "surname": "test"
+        },
+        "_get": {
+            "data.token": "token"
+        }
+    }
+]

@@ -2,6 +2,7 @@
 
 namespace App\Commands;
 
+use App\Classes\Emoji;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use LaravelZero\Framework\Commands\Command;
@@ -44,7 +45,7 @@ class InitCommand extends Command
             File::copy('stubs/env.stub', $defaultEnvFile);
         }
 
-        $this->info("You are ready to go \u{1F680}");
+        $this->info('You are ready to go '.Emoji::ROCKET);
 
         return 0;
     }

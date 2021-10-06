@@ -11,7 +11,18 @@
 |
 */
 
-uses(Tests\TestCase::class)->in('Feature');
+uses(Tests\TestCase::class)
+    ->beforeEach(function () {
+        \Illuminate\Support\Facades\Config::set('owl.base_folder', '.owl-test');
+        \Illuminate\Support\Facades\Config::set('owl.env_folder', '.owl-test/env');
+        \Illuminate\Support\Facades\Config::set('owl.default_env_file', '.owl-test/env/default.json');
+
+        $this->artisan('init');
+    })
+    ->afterEach(function () {
+        exec('rm -rf .owl-test');
+    })
+    ->in('Feature');
 
 /*
 |--------------------------------------------------------------------------

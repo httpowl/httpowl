@@ -2,7 +2,8 @@
     {
         "name": "list",
         "method": "get",
-        "url": "{{endpoint}}/users",
+        "url": "{{endpoint}}/get",
+        "use_global_headers": false,
         "headers": {
             "X-Requested-With": "XMLHttpRequest"
         }
@@ -10,14 +11,10 @@
     {
         "name": "create",
         "method": "post"
-        "url": "{{endpoint}}/users",
-        "use_global_headers": false,
-        "headers": {
-            "Content-Type": "application/x-www-form-urlencoded",
-        },
+        "url": "{{endpoint}}/post",
         "data": {
-            "name": "semih",
-            "surname": "test"
+            "name": "http owl",
+            "debug": true
         },
         "_get": {
             "data.token": "token"

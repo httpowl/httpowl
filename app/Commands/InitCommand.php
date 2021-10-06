@@ -2,32 +2,18 @@
 
 namespace App\Commands;
 
+use App\Classes\Emoji;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use LaravelZero\Framework\Commands\Command;
 
 class InitCommand extends Command
 {
-    /**
-     * The signature of the command.
-     *
-     * @var string
-     */
     protected $signature = 'init';
 
-    /**
-     * The description of the command.
-     *
-     * @var string
-     */
     protected $description = 'Initialize default files and folders';
 
-    /**
-     * Execute the console command.
-     *
-     * @return mixed
-     */
-    public function handle()
+    public function handle(): int
     {
         $owlBaseFolder = config('owl.base_folder');
         if (!Storage::exists($owlBaseFolder)) {
@@ -44,7 +30,7 @@ class InitCommand extends Command
             File::copy('stubs/env.stub', $defaultEnvFile);
         }
 
-        $this->info("You are ready to go \u{1F680}");
+        $this->info('You are ready to go '.Emoji::ROCKET);
 
         return 0;
     }

@@ -10,7 +10,7 @@
     },
     {
         "name": "create",
-        "method": "post"
+        "method": "post",
         "url": "{{endpoint}}/post",
         "data": {
             "name": "http owl",

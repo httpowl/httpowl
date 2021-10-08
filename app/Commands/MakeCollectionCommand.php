@@ -15,7 +15,7 @@ class MakeCollectionCommand extends Command
     {
         (new \App\Services\MakeCollection($this))->run();
 
-        $this->info(Emoji::CHECK.' Collection file created');
+        $this->info(Emoji::CHECK . ' Collection file created');
         return 0;
     }
 }

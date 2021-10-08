@@ -19,7 +19,7 @@ class MakeCollection extends Base implements Runnable
     protected function collectionFileExists($collectionFile): bool
     {
         return File::exists(
-            config('owl.base_folder')."/$collectionFile.json"
+            config('owl.base_folder') . "/$collectionFile.json"
         );
     }
 
@@ -27,7 +27,7 @@ class MakeCollection extends Base implements Runnable
     {
         File::copy(
             'stubs/collection.stub',
-            config('owl.base_folder')."/{$filename}.json"
+            config('owl.base_folder') . "/{$filename}.json"
         );
     }
 }

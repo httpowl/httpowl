@@ -19,7 +19,7 @@ class MakeEnv extends Base implements Runnable
     private function envFileExists($envFile): bool
     {
         return File::exists(
-            config('owl.env_folder')."/$envFile.json"
+            config('owl.env_folder') . "/$envFile.json"
         );
     }
 
@@ -27,7 +27,7 @@ class MakeEnv extends Base implements Runnable
     {
         File::copy(
             'stubs/env.stub',
-            config('owl.env_folder')."/{$filename}.json"
+            config('owl.env_folder') . "/{$filename}.json"
         );
     }
 }

@@ -15,7 +15,7 @@ class MakeEnvCommand extends Command
     {
         (new \App\Services\MakeEnv($this))->run();
 
-        $this->info(Emoji::CHECK.' Env file created');
+        $this->info(Emoji::CHECK . ' Env file created');
         return 0;
     }
 }

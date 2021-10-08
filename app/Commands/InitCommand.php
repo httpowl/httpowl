@@ -15,7 +15,7 @@ class InitCommand extends Command
     {
         (new \App\Services\Init($this))->run();
 
-        $this->info('You are ready to go '.Emoji::ROCKET);
+        $this->info('You are ready to go ' . Emoji::ROCKET);
         return 0;
     }
 }
